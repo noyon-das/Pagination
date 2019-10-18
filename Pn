@@ -1,0 +1,12 @@
+<ul class="pagination mt-2">
+				<li class="<?php if($pageno <= 1){ echo 'd-lg-none'; }?> page_one">
+					<a  class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Previous</a>
+				</li>
+				<?php for($i=1; $i<=$total_pages; $i++ ){?>
+					<a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><?php echo $i; ?></a>
+				<?php } ?>
+				
+				<li class="<?php if($pageno >= $total_pages){ echo 'd-lg-none'; } ?> page_two text-right">
+					<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+				</li>
+			</ul>
